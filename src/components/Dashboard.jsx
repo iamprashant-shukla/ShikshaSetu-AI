@@ -19,7 +19,7 @@ const Analytics = () => {
     try {
       setAiStatus('Querying Ministry of Education data...');
 
-      // 🔒 SECURE: Call Netlify Function instead of direct API
+      // 🔒 SECURE: Using Netlify Function
       const response = await fetch('/.netlify/functions/groq-proxy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -41,7 +41,7 @@ const Analytics = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Netlify Function error');
+        throw new Error('API request failed');
       }
 
       const completion = await response.json();
@@ -71,7 +71,7 @@ const Analytics = () => {
 
     } catch (error) {
       console.error('Error:', error);
-      setAiStatus('Error loading data: ' + error.message);
+      setAiStatus('Error loading data');
       setLoading(false);
     }
   };
@@ -158,16 +158,13 @@ const Analytics = () => {
           </div>
         </div>
 
-        {/* REST OF YOUR CODE STAYS THE SAME... */}
-        {/* (I'm keeping the rest of your JSX exactly as is) */}
-
         {/* HEADER - RESPONSIVE */}
         <div className="mb-6 md:mb-8">
           <h1 className="text-2xl md:text-3xl font-bold text-[#1E3A5F] mb-1 md:mb-2">AI Analytics Dashboard</h1>
           <p className="text-xs md:text-base text-gray-600">Powered by Groq AI • FY {analyticsData.overview.lastFiscalYear}</p>
         </div>
 
-        {/* OVERVIEW STATS */}
+        {/* OVERVIEW STATS - RESPONSIVE GRID */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 mb-6 md:mb-8">
           {[
             { label: 'Total Schools', value: analyticsData.overview.totalSchools, icon: School, suffix: '' },
@@ -190,7 +187,158 @@ const Analytics = () => {
           ))}
         </div>
 
-        {/* ... REST OF YOUR COMPONENTS REMAIN EXACTLY THE SAME ... */}
+        {/* BUDGET DISTRIBUTION & MONTHLY TREND - RESPONSIVE */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-6">
+          {/* Budget Distribution */}
+          <div className="lg:col-span-2 bg-white rounded-lg md:rounded-xl border-2 border-gray-200 shadow-sm p-4 md:p-6">
+            <h2 className="text-lg md:text-xl font-bold text-[#1E3A5F] mb-4 md:mb-6">Budget Distribution</h2>
+            <div className="space-y-4 md:space-y-5">
+              {analyticsData.budgetByCategory.map((item, index) => (
+                <div key={index} className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs md:text-sm font-bold text-gray-900">{item.category}</span>
+                    <span className="text-xs md:text-sm font-bold text-[#1E3A5F]">{item.percentage}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5 md:h-3">
+                    <div 
+                      className="bg-gradient-to-r from-[#1E3A5F] to-[#2D4A70] h-2.5 md:h-3 rounded-full transition-all duration-1000"
+                      style={{ width: `${item.percentage}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Monthly Trend */}
+          <div className="bg-white rounded-lg md:rounded-xl border-2 border-gray-200 shadow-sm p-4 md:p-6">
+            <h2 className="text-lg md:text-xl font-bold text-[#1E3A5F] mb-3 md:mb-4">Recent Months</h2>
+            <div className="space-y-3 md:space-y-4">
+              {analyticsData.monthlyTrend.slice(-3).map((month, index) => (
+                <div key={index} className="p-3 md:p-4 bg-slate-50 rounded-lg border border-gray-200">
+                  <p className="text-[10px] md:text-xs font-bold text-gray-600 mb-2">{month.month}</p>
+                  <div className="space-y-1.5 md:space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-[10px] md:text-xs text-gray-600">Planned</span>
+                      <span className="text-xs md:text-sm font-bold text-gray-900">{formatCurrency(month.planned)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-[10px] md:text-xs text-gray-600">Actual</span>
+                      <span className="text-xs md:text-sm font-bold text-[#1E3A5F]">{formatCurrency(month.actual)}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* TOP SCHEMES TABLE - RESPONSIVE */}
+        <div className="bg-white rounded-lg md:rounded-xl border-2 border-gray-200 shadow-sm p-4 md:p-6 mb-4 md:mb-6">
+          <h2 className="text-lg md:text-xl font-bold text-[#1E3A5F] mb-3 md:mb-4">Top Schemes</h2>
+          
+          {/* Mobile: Card View */}
+          <div className="block md:hidden space-y-3">
+            {analyticsData.topSchemes.map((scheme, index) => (
+              <div key={index} className="p-4 border-2 border-gray-200 rounded-lg hover:border-[#D4AF37] transition-all">
+                <h3 className="font-bold text-gray-900 mb-3 text-sm">{scheme.name}</h3>
+                <div className="grid grid-cols-2 gap-2 mb-3 text-xs">
+                  <div>
+                    <p className="text-gray-500 mb-1">Budget</p>
+                    <p className="font-bold text-gray-900">{formatCurrency(scheme.budget)}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-500 mb-1">Disbursed</p>
+                    <p className="font-bold text-[#1E3A5F]">{formatCurrency(scheme.disbursed)}</p>
+                  </div>
+                  <div className="col-span-2">
+                    <p className="text-gray-500 mb-1">Beneficiaries</p>
+                    <p className="font-bold text-gray-900">{formatNumber(scheme.beneficiaries)} {scheme.unit}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="flex-1 bg-gray-200 rounded-full h-2">
+                    <div 
+                      className="bg-gradient-to-r from-[#1E3A5F] to-[#2D4A70] h-2 rounded-full"
+                      style={{ width: `${scheme.utilization}%` }}
+                    ></div>
+                  </div>
+                  <span className="text-xs font-bold text-[#1E3A5F]">{scheme.utilization}%</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: Table View */}
+          <div className="hidden md:block overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b-2 border-gray-200">
+                  <th className="text-left py-3 px-4 text-sm font-bold text-gray-700">Scheme</th>
+                  <th className="text-left py-3 px-4 text-sm font-bold text-gray-700">Budget</th>
+                  <th className="text-left py-3 px-4 text-sm font-bold text-gray-700">Disbursed</th>
+                  <th className="text-left py-3 px-4 text-sm font-bold text-gray-700">Beneficiaries</th>
+                  <th className="text-left py-3 px-4 text-sm font-bold text-gray-700">Progress</th>
+                </tr>
+              </thead>
+              <tbody>
+                {analyticsData.topSchemes.map((scheme, index) => (
+                  <tr key={index} className="border-b border-gray-100 hover:bg-slate-50">
+                    <td className="py-4 px-4 font-bold text-gray-900">{scheme.name}</td>
+                    <td className="py-4 px-4 text-gray-700">{formatCurrency(scheme.budget)}</td>
+                    <td className="py-4 px-4 text-[#1E3A5F]">{formatCurrency(scheme.disbursed)}</td>
+                    <td className="py-4 px-4 text-gray-700">{formatNumber(scheme.beneficiaries)} {scheme.unit}</td>
+                    <td className="py-4 px-4">
+                      <div className="flex items-center gap-3">
+                        <div className="flex-1 bg-gray-200 rounded-full h-2.5 min-w-[100px]">
+                          <div 
+                            className="bg-gradient-to-r from-[#1E3A5F] to-[#2D4A70] h-2.5 rounded-full"
+                            style={{ width: `${scheme.utilization}%` }}
+                          ></div>
+                        </div>
+                        <span className="text-sm font-bold text-[#1E3A5F]">{scheme.utilization}%</span>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* TOP STATES - RESPONSIVE */}
+        <div className="bg-white rounded-lg md:rounded-xl border-2 border-gray-200 shadow-sm p-4 md:p-6">
+          <h2 className="text-lg md:text-xl font-bold text-[#1E3A5F] mb-3 md:mb-4">Top 5 States</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            {analyticsData.stateData.map((state, index) => (
+              <div key={index} className="p-4 md:p-5 border-2 border-gray-200 rounded-lg md:rounded-xl hover:border-[#D4AF37] hover:shadow-lg transition-all">
+                <div className="flex items-center justify-between mb-2 md:mb-3">
+                  <h3 className="text-sm md:text-base font-bold text-gray-900">{state.state}</h3>
+                  <span className="text-lg md:text-xl font-bold text-[#D4AF37]">#{index + 1}</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2 md:gap-3 mb-3 md:mb-4 text-xs md:text-sm">
+                  <div className="p-2 bg-slate-50 rounded-lg">
+                    <p className="text-gray-500 mb-1 text-[10px] md:text-xs">Schools</p>
+                    <p className="font-bold text-gray-900 text-xs md:text-sm">{formatNumber(state.schools)}</p>
+                  </div>
+                  <div className="p-2 bg-slate-50 rounded-lg">
+                    <p className="text-gray-500 mb-1 text-[10px] md:text-xs">Students</p>
+                    <p className="font-bold text-gray-900 text-xs md:text-sm">{formatNumber(state.students)}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="flex-1 bg-gray-200 rounded-full h-2 md:h-2.5">
+                    <div 
+                      className="bg-gradient-to-r from-[#1E3A5F] to-[#2D4A70] h-2 md:h-2.5 rounded-full"
+                      style={{ width: `${state.utilization}%` }}
+                    ></div>
+                  </div>
+                  <span className="text-xs md:text-sm font-bold text-[#1E3A5F]">{state.utilization}%</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
       </div>
     </div>
