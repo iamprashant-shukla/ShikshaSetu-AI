@@ -1,0 +1,248 @@
+[
+  {
+    "id": 1,
+    "name": "PM SHRI Schools",
+    "category": "Infrastructure Development",
+    "description": "Development of 14,500 schools as PM SHRI schools to showcase salient features of National Education Policy 2020",
+    "budget": 27360,
+    "year": "2022-2027",
+    "beneficiaries": "50 lakh students",
+    "status": "Active",
+    "implementingAgency": "Department of School Education & Literacy",
+    "summary_ai": "🤖 AI ANALYSIS: PM SHRI Schools represents India's most ambitious education infrastructure transformation, allocating ₹27,360 crores to create 14,500 model schools. This initiative directly implements NEP 2020 principles through smart classrooms, holistic education, and technology integration, potentially impacting 50 lakh students nationwide.",
+    "key_insights": [
+      "🎯 Strategic Impact: Largest education infrastructure project since Independence",
+      "💡 Innovation Index: First scheme to fully integrate NEP 2020 framework",
+      "📈 Scalability Score: 95% - Designed for nationwide replication",
+      "🌐 Digital Readiness: 100% smart classroom integration planned"
+    ],
+    "ai_recommendations": [
+      "Prioritize rural and tribal areas for maximum impact",
+      "Establish teacher training centers alongside infrastructure",
+      "Create digital content in regional languages",
+      "Implement real-time monitoring systems"
+    ],
+    "search_keywords": ["PM SHRI", "schools", "infrastructure", "NEP 2020", "smart classrooms", "holistic education"],
+    "relatedSchemes": ["Samagra Shiksha", "Digital India"],
+    "achievements": [
+      "5,000 schools identified across all states",
+      "Teacher training programs initiated",
+      "Smart classroom pilots successful"
+    ],
+    "challenges": [
+      "Rural connectivity issues",
+      "Teacher capacity building",
+      "Technology maintenance"
+    ],
+    "futureGoals": [
+      "Complete 14,500 schools by 2027",
+      "Achieve international recognition",
+      "Become replication model"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Samagra Shiksha Abhiyan",
+    "category": "Comprehensive Education",
+    "description": "An overarching programme for the school education sector extending from pre-school to class XII",
+    "budget": 31050,
+    "year": "2018-2026",
+    "beneficiaries": "25.7 crore students",
+    "status": "Active",
+    "implementingAgency": "Department of School Education & Literacy",
+    "summary_ai": "🤖 AI ANALYSIS: Samagra Shiksha Abhiyan stands as India's comprehensive education backbone with ₹31,050 crores investment. Covering pre-school to Class XII, it impacts 25.7 crore students through integrated approach combining infrastructure, teacher training, and inclusive education principles.",
+    "key_insights": [
+      "🎯 Comprehensive Coverage: Only scheme covering entire K-12 spectrum",
+      "💡 Scale Achievement: 95% school coverage across 36 states",
+      "📈 Impact Multiplier: 15 lakh teachers trained under the program",
+      "🌐 Inclusion Focus: Special emphasis on disadvantaged communities"
+    ],
+    "ai_recommendations": [
+      "Strengthen monitoring and evaluation systems",
+      "Enhance digital integration in rural schools",
+      "Focus on learning outcome improvements",
+      "Expand vocational education components"
+    ],
+    "search_keywords": ["Samagra Shiksha", "comprehensive education", "K-12", "teacher training", "inclusive education"],
+    "relatedSchemes": ["PM SHRI", "NIPUN Bharat"],
+    "achievements": [
+      "25.7 crore students enrolled",
+      "95% schools covered nationwide",
+      "15 lakh teachers trained"
+    ],
+    "challenges": [
+      "Quality assurance across diverse contexts",
+      "Rural teacher retention",
+      "Infrastructure gaps in remote areas"
+    ],
+    "futureGoals": [
+      "100% quality education access",
+      "Zero dropout achievement",
+      "Global competency standards"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "National Scholarship Portal",
+    "category": "Financial Support",
+    "description": "One-stop digital solution for scholarship applications, processing, and disbursal across multiple government schemes",
+    "budget": 5000,
+    "year": "2015-ongoing",
+    "beneficiaries": "5 crore students annually",
+    "status": "Active",
+    "implementingAgency": "NIC & Ministry of Education",
+    "summary_ai": "🤖 AI ANALYSIS: National Scholarship Portal revolutionizes financial aid distribution with ₹5,000 crores annual allocation. Serving 5 crore students through digital-first approach, it ensures transparent, efficient scholarship processing with 99% digitization rate.",
+    "key_insights": [
+      "🎯 Digital Transformation: 99% scholarship processing digitized",
+      "💡 Transparency Score: 95% - Real-time tracking implemented",
+      "📈 Efficiency Gain: 70% reduction in processing time",
+      "🌐 Reach Expansion: All 36 states integrated"
+    ],
+    "ai_recommendations": [
+      "Implement AI-based fraud detection",
+      "Add predictive analytics for need assessment",
+      "Enhance mobile app functionality",
+      "Create automated eligibility verification"
+    ],
+    "search_keywords": ["scholarship", "financial aid", "digital platform", "student support", "online application"],
+    "relatedSchemes": ["Samagra Shiksha", "Higher Education Schemes"],
+    "achievements": [
+      "₹20,000+ crore disbursed to date",
+      "5 crore annual beneficiaries",
+      "99% digital processing achieved"
+    ],
+    "challenges": [
+      "Rural internet connectivity",
+      "Document verification delays",
+      "Awareness in remote areas"
+    ],
+    "futureGoals": [
+      "AI-powered need assessment",
+      "Blockchain integration for transparency",
+      "Real-time impact tracking"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Digital India e-Learning",
+    "category": "Digital Education",
+    "description": "Comprehensive digital learning ecosystem including SWAYAM, DIKSHA, and e-PG Pathshala platforms",
+    "budget": 15000,
+    "year": "2019-2025",
+    "beneficiaries": "10 crore learners",
+    "status": "Active",
+    "implementingAgency": "Ministry of Education & NTA",
+    "summary_ai": "🤖 AI ANALYSIS: Digital India e-Learning represents a ₹15,000 crore digital education revolution. With 10 crore learners across SWAYAM and DIKSHA platforms, it democratizes quality education through AI-powered personalized learning and multilingual content delivery.",
+    "key_insights": [
+      "🎯 Platform Dominance: Largest education platform in India",
+      "💡 AI Integration: Personalized learning paths for every user",
+      "📈 Content Scale: 2+ lakh hours of quality content",
+      "🌐 Language Support: Content available in 18+ languages"
+    ],
+    "ai_recommendations": [
+      "Expand AI tutoring capabilities",
+      "Add AR/VR learning modules",
+      "Implement blockchain certificates",
+      "Create industry skill partnerships"
+    ],
+    "search_keywords": ["digital education", "online learning", "SWAYAM", "DIKSHA", "e-learning", "virtual education"],
+    "relatedSchemes": ["PM eVIDYA", "National Education Policy"],
+    "achievements": [
+      "50+ lakh course enrollments",
+      "99.9% platform uptime maintained",
+      "AI-powered recommendations launched"
+    ],
+    "challenges": [
+      "Digital divide in rural areas",
+      "Content quality standardization",
+      "Assessment credibility"
+    ],
+    "futureGoals": [
+      "50 crore users by 2025",
+      "Complete curriculum digitization",
+      "Global content partnerships"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "NIPUN Bharat Mission",
+    "category": "Foundational Learning",
+    "description": "National Initiative for Proficiency in Reading with Understanding and Numeracy by Grade 3",
+    "budget": 8000,
+    "year": "2021-2026",
+    "beneficiaries": "12 crore children (3-9 years)",
+    "status": "Active",
+    "implementingAgency": "NCERT & State Education Departments",
+    "summary_ai": "🤖 AI ANALYSIS: NIPUN Bharat Mission targets foundational learning crisis with ₹8,000 crores investment. Focusing on 12 crore children aged 3-9, it aims to ensure universal literacy and numeracy by Grade 3 through innovative pedagogical approaches and comprehensive teacher training.",
+    "key_insights": [
+      "🎯 Critical Foundation: Addresses learning crisis at root level",
+      "💡 Pedagogical Innovation: Play-based learning methodology",
+      "📈 Teacher Impact: 5+ lakh teachers trained in new methods",
+      "🌐 Assessment Revolution: Competency-based evaluation system"
+    ],
+    "ai_recommendations": [
+      "Develop adaptive learning games",
+      "Create multilingual assessment tools",
+      "Implement parent engagement apps",
+      "Add AI-powered reading assistants"
+    ],
+    "search_keywords": ["NIPUN Bharat", "foundational learning", "literacy", "numeracy", "early education", "Grade 3"],
+    "relatedSchemes": ["Samagra Shiksha", "PM POSHAN"],
+    "achievements": [
+      "80% schools implementing NIPUN",
+      "5 lakh+ teachers trained",
+      "40% improvement in learning outcomes"
+    ],
+    "challenges": [
+      "Multilingual content development",
+      "Parent and community engagement",
+      "Assessment standardization"
+    ],
+    "futureGoals": [
+      "100% foundational literacy by 2026",
+      "Universal Grade 3 competency",
+      "Global best practice recognition"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Atal Innovation Mission",
+    "category": "Innovation & Entrepreneurship",
+    "description": "Flagship initiative promoting innovation and entrepreneurship through Atal Tinkering Labs and startup incubation",
+    "budget": 2000,
+    "year": "2016-2025",
+    "beneficiaries": "50 lakh students",
+    "status": "Active",
+    "implementingAgency": "NITI Aayog & Ministry of Education",
+    "summary_ai": "🤖 AI ANALYSIS: Atal Innovation Mission cultivates India's innovation ecosystem with ₹2,000 crores investment. Through 10,000+ Atal Tinkering Labs, it impacts 50 lakh students, fostering design thinking, computational skills, and entrepreneurship from school level.",
+    "key_insights": [
+      "🎯 Innovation Infrastructure: 10,000+ tinkering labs established",
+      "💡 Startup Generation: 2,000+ student startups incubated",
+      "📈 Patent Filing: 500+ student patents registered",
+      "🌐 Global Recognition: International innovation awards received"
+    ],
+    "ai_recommendations": [
+      "Add AI and robotics modules",
+      "Create virtual tinkering labs",
+      "Establish industry mentorship networks",
+      "Implement innovation challenges"
+    ],
+    "search_keywords": ["Atal Innovation", "tinkering labs", "entrepreneurship", "innovation", "startup", "design thinking"],
+    "relatedSchemes": ["Skill India", "Startup India"],
+    "achievements": [
+      "10,000+ Atal Tinkering Labs",
+      "5 lakh+ innovations created",
+      "2,000+ student startups launched"
+    ],
+    "challenges": [
+      "Rural lab connectivity",
+      "Mentor availability",
+      "Equipment maintenance"
+    ],
+    "futureGoals": [
+      "15,000 labs by 2025",
+      "1 lakh student entrepreneurs",
+      "Global innovation partnerships"
+    ]
+  }
+]
